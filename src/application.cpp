@@ -294,7 +294,7 @@ void Application::cursor_event(float x, float y) {
 }
 
 void Application::scroll_event(float offset_x, float offset_y) {
-    camera.moveForward(-offset_y * scrollRate);
+    camera.moveForward(offset_y * scrollRate);
 }
 
 void Application::mouse_event(int key, int event, unsigned char mods) {
@@ -447,7 +447,7 @@ void Application::mouse_released(e_mouse_button b) {
 void Application::mouse1_dragged(float x, float y) {
     float dx = (x - mouseX);
     float dy = (y - mouseY);
-    camera.rotateBy(dy * (PI / screenH), dx * (PI / screenW));
+    camera.rotateBy(-dy * (PI / screenH), -dx * (PI / screenW));
 }
 
 /*
